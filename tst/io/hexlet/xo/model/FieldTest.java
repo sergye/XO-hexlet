@@ -35,4 +35,33 @@ public class FieldTest {
 
         assertEquals(inputFigure, actualFigure);
     }
+
+    @Test
+    public void testGetFigureWhenFigureIsNotSet() throws InvalidPointException, AlreadyOccupiedException {
+        final Field field = new Field();
+
+        final Point inputPoint = new Point(0, 0);
+
+        final Figure actualFigure = field.getFigure(inputPoint);
+
+        assertNull(actualFigure);
+    }
+
+    @Test
+    public void testGetFigureWhenXIsLessThanZero() throws InvalidPointException, AlreadyOccupiedException {
+        final Field field = new Field();
+
+        final Point inputPoint = new Point(-1, 0);
+
+        final Figure actualFigure;
+        try {
+            actualFigure = field.getFigure(inputPoint);
+            fail();
+        } catch (InvalidPointException e) {
+            e.printStackTrace();
+        }
+
+        assertNull(actualFigure);
+    }
+
 }
