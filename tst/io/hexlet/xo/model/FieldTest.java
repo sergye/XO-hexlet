@@ -1,5 +1,7 @@
 package io.hexlet.xo.model;
 
+import io.hexlet.xo.model.exceptions.AlreadyOccupiedException;
+import io.hexlet.xo.model.exceptions.InvalidPointException;
 import org.junit.Test;
 
 import java.awt.*;
@@ -20,7 +22,7 @@ public class FieldTest {
     }
 
     @Test
-    public void testSetFigure() {
+    public void testSetFigure() throws InvalidPointException, AlreadyOccupiedException {
         final Field field = new Field();
 
         final Point inputPoint = new Point(0, 0);
