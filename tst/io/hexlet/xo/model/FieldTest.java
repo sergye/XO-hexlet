@@ -61,7 +61,6 @@ public class FieldTest {
             e.printStackTrace();
         }
 
-        assertNull(actualFigure);
     }
 
 }
